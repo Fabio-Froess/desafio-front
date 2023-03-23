@@ -28,4 +28,9 @@ export default {
   deletarMod: (id) => {
     return http.delete(`modules/${id}`);
   },
+
+  salvar: (modulo) => {
+    console.log(modulo);
+    return http.post("modules", modulo);
+  },
 };

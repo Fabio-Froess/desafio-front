@@ -107,6 +107,7 @@ export default {
     }
 
     onMounted(() => {
+      window.sessionStorage.setItem("cpf_aluno", "");
       listarAlunos();
     });
 
@@ -120,7 +121,7 @@ export default {
     const listarAlunos = async () => {
       try {
         const { data } = await alunos.listar();
-        console.log(data);
+        console.log("aqui", data);
         rows.value = data;
       } catch (error) {
         console.log(error);
@@ -132,6 +133,7 @@ export default {
     }
 
     function verAluno(id) {
+      console.log("ver aluno", id);
       router.push(`/paginamodulos/${id}`);
       listarAlunos();
     }

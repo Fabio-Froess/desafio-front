@@ -33,12 +33,7 @@
           @click="executaAcao"
           padding="7px 25px"
         />
-        <q-btn
-          color="primary"
-          label="Cancelar"
-          @click="cancelar"
-          to="/paginamodulos"
-        />
+        <q-btn color="primary" label="Cancelar" @click="cancelarAcao" />
       </div>
     </div>
   </div>
@@ -46,7 +41,7 @@
 <script setup>
 import modulos from "src/services/modulos";
 import { onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 
@@ -54,10 +49,10 @@ const { id } = route.params;
 
 const form = ref({
   name: "",
-  grade1: "",
-  grade2: "",
-  grade3: "",
-  studentcpf: "",
+  grade1: null,
+  grade2: null,
+  grade3: null,
+  studentCpf: "",
 });
 
 onMounted(async () => {
@@ -67,12 +62,21 @@ onMounted(async () => {
     form.value = data;
   }
 });
+const router = useRouter();
+
+function cancelarAcao(id) {
+  router.push(`/paginamodulos/${id}`);
+}
 
 async function executaAcao() {
+  form.value.grade1 = parseFloat(form.value.grade1);
+  form.value.grade2 = parseFloat(form.value.grade2);
+  form.value.grade3 = parseFloat(form.value.grade3);
+  form.value.studentCpf = sessionStorage.getItem("cpf_aluno");
   if (id) {
     await modulos.editarMod(id, form.value);
   } else {
-    await modulos.salvarMod(form.value);
+    await modulos.salvar(form.value);
   }
 }
 </script>

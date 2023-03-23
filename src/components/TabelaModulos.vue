@@ -120,7 +120,8 @@ export default {
       try {
         const { data } = await alunos.listarAluno(id);
         aluno.value = data;
-        console.log(data.modules, data);
+        window.sessionStorage.setItem("cpf_aluno", data.cpf);
+        console.log("aluno", data.modules, data);
         rows.value = data.modules;
       } catch (error) {
         console.log(error);
