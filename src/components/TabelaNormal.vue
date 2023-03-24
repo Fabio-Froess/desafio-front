@@ -39,11 +39,11 @@ export default {
 
     const columns = [
       {
-        name: "nome",
+        name: "name",
         required: true,
         label: "Nome",
         align: "left",
-        field: "nome",
+        field: "name",
         format: (val) => `${val}`,
         sortable: true,
       },
@@ -56,16 +56,16 @@ export default {
       },
       {
         name: "modulo",
-        label: "Modulo",
+        label: "Modulos",
         field: "modulo",
         sortable: true,
         align: "center",
       },
       { name: "situacao", label: "Status", field: "situacao", align: "center" },
       {
-        name: "dataNasc",
+        name: "birth_date",
         label: "Data de Nascimento",
-        field: "dataNasc",
+        field: "birth_date",
         align: "center",
       },
     ];

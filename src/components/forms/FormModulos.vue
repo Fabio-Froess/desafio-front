@@ -64,7 +64,7 @@ onMounted(async () => {
 });
 const router = useRouter();
 
-function cancelarAcao(id) {
+function cancelarAcao() {
   router.push(`/paginamodulos/${id}`);
 }
 
