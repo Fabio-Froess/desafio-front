@@ -61,6 +61,7 @@ onMounted(async () => {
 
     form.value = data;
   }
+  console.log(route.params.id);
 });
 const router = useRouter();
 

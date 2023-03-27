@@ -108,12 +108,13 @@ export default {
 
     async function deletarAluno(id) {
       alert("Deseja realmente deletar?" + id);
-      await alunos.deletar(id);
-      listarModulos();
+      await modulos.deletarMod(id);
+      modulosAlunos();
     }
 
     onMounted(async () => {
       modulosAlunos();
+      console.log("id pessoa", route.params.id);
     });
 
     const modulosAlunos = async () => {
@@ -135,8 +136,7 @@ export default {
     const router = useRouter();
 
     function adicionarModulo() {
-      console.log("aqui");
-      router.push("/adicionarMod");
+      router.push(`/adicionarMod/${id}`);
     }
 
     // const listarAluno = async () => {};
@@ -152,7 +152,7 @@ export default {
       }
     }
     function editarAluno(id) {
-      router.push(`/editar/${id}`);
+      router.push(`/editarMod/${id}`);
     }
 
     return {

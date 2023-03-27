@@ -24,7 +24,7 @@ const routes = [
         component: () => import("pages/AdcionarAlunos.vue"),
       },
       {
-        path: "/adicionarMod",
+        path: "/adicionarMod/:id",
         component: () => import("pages/AdcionarModulos.vue"),
       },
       {

@@ -33,4 +33,8 @@ export default {
     console.log(modulo);
     return http.post("modules", modulo);
   },
+
+  editarMod: (id) => {
+    return http.patch(`modules/${id}`);
+  },
 };
