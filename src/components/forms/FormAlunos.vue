@@ -13,14 +13,7 @@
         <q-input v-model="form.cpf" filled label="CPF" />
       </div>
     </div>
-    <!-- <div class="row q-pb-xs">
-      <div class="col-sm-6 q-pr-xs">
-        <q-input v-model="form.modulo" filled label="Módulo" />
-      </div>
-      <div class="col-sm-6 q-pr-xs">
-        <q-input v-model="form.status" filled label="Status" />
-      </div>
-    </div> -->
+
     <div class="row">
       <div class="col-md-4">
         <q-input type="date" v-model="form.birth_date" filled />

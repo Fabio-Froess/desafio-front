@@ -35,6 +35,10 @@ const routes = [
         path: "/paginamodulos/:id",
         component: () => import("pages/PaginaModulos.vue"),
       },
+      {
+        path: "/editarModulo/:id",
+        component: () => import("pages/EditarModulos.vue"),
+      },
     ],
   },
 

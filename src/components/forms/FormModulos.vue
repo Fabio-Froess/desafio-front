@@ -75,7 +75,8 @@ async function executaAcao() {
   form.value.grade3 = parseFloat(form.value.grade3);
   form.value.studentCpf = sessionStorage.getItem("cpf_aluno");
   if (id) {
-    await modulos.editarMod(id, form.value);
+    const { name, studentCpf, grade1, grade2, grade3 } = form.value;
+    await modulos.editarMod(id, { name, grade1, grade2, grade3 });
   } else {
     await modulos.salvar(form.value);
   }

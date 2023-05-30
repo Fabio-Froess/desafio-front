@@ -35,6 +35,7 @@ export default {
   },
 
   editarMod: (id) => {
-    return http.patch(`modules/${id}`);
+    console.log("ei burro", id);
+    return http.patch(`modules/${id}`, modulo);
   },
 };

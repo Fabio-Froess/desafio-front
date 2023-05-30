@@ -151,8 +151,9 @@ export default {
         console.log(error);
       }
     }
-    function editarAluno(id) {
-      router.push(`/editarMod/${id}`);
+    async function editarAluno(id) {
+      console.log("EI BURRO", id);
+      await router.push(`/editarModulo/${id}`);
     }
 
     return {
